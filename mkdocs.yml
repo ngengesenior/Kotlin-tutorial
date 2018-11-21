@@ -1,0 +1,5 @@
+site_name: Ngenge Senior
+theme: material
+nav:
+    - Home: index.md
+    - Functions: functions.md
