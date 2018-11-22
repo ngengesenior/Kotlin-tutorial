@@ -36,7 +36,7 @@
     
     
       
-        <title>Functions - Ngenge Senior</title>
+        <title>Kotlin Basics - Ngenge Senior</title>
       
     
     
@@ -72,7 +72,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#functions-and-lambdas" tabindex="1" class="md-skip">
+      <a href="#kotlin-basics" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -98,7 +98,7 @@
                 Ngenge Senior
               </span>
               <span class="md-header-nav__topic">
-                Functions
+                Kotlin Basics
               </span>
             
           
@@ -179,18 +179,6 @@
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../basics/" title="Kotlin Basics" class="md-nav__link">
-      Kotlin Basics
-    </a>
-  </li>
-
-    
-      
-      
-      
-
   
 
 
@@ -202,11 +190,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Functions
+        Kotlin Basics
       </label>
     
-    <a href="./" title="Functions" class="md-nav__link md-nav__link--active">
-      Functions
+    <a href="./" title="Kotlin Basics" class="md-nav__link md-nav__link--active">
+      Kotlin Basics
     </a>
     
       
@@ -220,29 +208,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#declaring-functions" title="Declaring functions" class="md-nav__link">
-    Declaring functions
+  <a href="#variables" title="Variables" class="md-nav__link">
+    Variables
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#calling-functions" title="Calling functions" class="md-nav__link">
-    Calling functions
+  <a href="#automatic-type-inference" title="Automatic Type Inference" class="md-nav__link">
+    Automatic Type Inference
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#functions-with-single-expressions" title="Functions with Single Expressions" class="md-nav__link">
-    Functions with Single Expressions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#functions-with-default-values" title="Functions with default values" class="md-nav__link">
-    Functions with default values
+  <a href="#data-types" title="Data types" class="md-nav__link">
+    Data types
   </a>
   
 </li>
@@ -255,6 +236,18 @@
   
 </nav>
     
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../functions/" title="Functions" class="md-nav__link">
+      Functions
+    </a>
   </li>
 
     
@@ -279,29 +272,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#declaring-functions" title="Declaring functions" class="md-nav__link">
-    Declaring functions
+  <a href="#variables" title="Variables" class="md-nav__link">
+    Variables
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#calling-functions" title="Calling functions" class="md-nav__link">
-    Calling functions
+  <a href="#automatic-type-inference" title="Automatic Type Inference" class="md-nav__link">
+    Automatic Type Inference
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#functions-with-single-expressions" title="Functions with Single Expressions" class="md-nav__link">
-    Functions with Single Expressions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#functions-with-default-values" title="Functions with default values" class="md-nav__link">
-    Functions with default values
+  <a href="#data-types" title="Data types" class="md-nav__link">
+    Data types
   </a>
   
 </li>
@@ -323,74 +309,65 @@
               
                 
                 
-                <h1 id="functions-and-lambdas">Functions and Lambdas</h1>
-<p>A function is a named block of code that performs a particular task. In Kotlin, a function always returns a value</p>
-<h2 id="declaring-functions">Declaring functions</h2>
-<p>Functions in Kotlin are declared as follows</p>
-<pre><code class="java">  fun function_name(param1:type1,param2:type2,.... ,paramn:typen):return type
+                <h1 id="kotlin-basics">Kotlin Basics</h1>
+<p>In this section, you will learn the basic building blocks of Kotlin starting from variables, to data types, type inference, and more. If you are from a Java background, you will notice the similarities and differences that exist between the two languages.</p>
+<h2 id="variables">Variables</h2>
+<p>Kotlin has two ways of declaring variables; using the <code>val</code>  and  <code>var</code> keywords.<code>Val</code> is an immutable value, which means once assigned, it cannot be reassigned. It is similar to a <code>final</code> variable in <code>Java</code>. Var on the otherhand, is a mutable value, meaning you can reassign later to a different value.</p>
+<pre><code>
+    val pi = 3.142
+    var age = 20
 
 </code></pre>
 
-<p>A quick example of a function that prints the classical , "Hello World!", will be like this;</p>
-<pre><code class="java">fun sayHello(){
-  println(&quot;Hello World!&quot;)
-}
-</code></pre>
-
-<p>The above function takes no parameters and returns type Unit.Unit is corresponds to void in Java.</p>
-<p>Now a function that takes two parameters and returns a value demonstrated thus;</p>
-<pre><code class="java">fun welomeStudent(name:String,id:String):String{
-
-    return &quot;Welcome $name. Your student id is $id&quot;
-
-}
+<p>You can even declare a <code>var</code> and assign it later, unlike <code>val</code> which must be assigned a final value.</p>
+<pre><code>var name:String
+name = &quot;Mary Doe&quot;
 
 </code></pre>
 
-<h2 id="calling-functions">Calling functions</h2>
-<p>Functions in Kotlin are called the same way like most languages.</p>
-<pre><code class="kotlin">&lt;function name&gt;(arg1,arg2,..argn)
-</code></pre>
-
-<p>Calling the above functions can be done as follows</p>
-<pre><code>    sayHello()
-    welcomeStudent(&quot;John Doe&quot;,&quot;HF1234&quot;)
-</code></pre>
-
-<p>Now the beauty of Kotlin in functions come in when we can call functions using named parameters as follows,</p>
-<pre><code>    welcomeStudent(id=&quot;HF123&quot;,name=&quot;Mary Doe&quot;)
+<h2 id="automatic-type-inference">Automatic Type Inference</h2>
+<p>With Java and some other languages, you must declare a variable's type before using or assigning it.If you noticed above, we initialized <code>age</code> to 20 without telling Kotlin that it should be an <code>Int</code>.Kotlin automatically infers the type for you.Thus, the following two declarations are the same.</p>
+<pre><code>var age:Int = 20
+var age = 20
 
 </code></pre>
 
-<p>Imagine a functions with 20+ parameters; with Java and other languages, you must know the order in which the parameters are passed before calling the function.This is really not easy to retain. With named parameters, you don't have to know the order in which those parameters are passed.</p>
-<h2 id="functions-with-single-expressions">Functions with Single Expressions</h2>
-<p>We can write a function that does addition of two integers and return the value as follows;</p>
-<pre><code>fun add(a:Int,b:Int):Int
-{
-    return a+ b
+<h2 id="data-types">Data types</h2>
+<p>If you are from a Java background, you understand that Java has the notion of primitive types like <code>int,boolean,float,long,double</code> etc and typen wrapper classes such as <code>Integer,Boolean,Float,Long,Double</code> respectively. Primitive types cannot be assigned <code>null</code>.</p>
+<p>In Kotlin, the story changes; as everything is an object. </p>
+<p>The various data types in Kotlin include numbers, characters,strings,collections etc.
+The number types are as follows</p>
+<ul>
+<li>Int: 32 bytes long</li>
+<li>Float: 32 bytes long</li>
+<li>Long: 64 bytes long</li>
+<li>Double: 64 bytes long</li>
+<li>Short: 16 bytes long</li>
+<li>Byte: 8 bytes long</li>
+</ul>
+<p>There is also 
+- Char
+- String</p>
+<p>and Collections</p>
+<p>Code snippet of the various mentioned types above can be seen here</p>
+<pre><code>
+var anInt:Int = 20
 
-}
-</code></pre>
+var aFloat:Float = 2.3F
 
-<p>The above function is a single expression function. The single expression function can be simplified further as follows.</p>
-<pre><code>fun add(a:Int,b:Int) = a + b
-</code></pre>
+var aLong:Long = 1234L
 
-<p>As you might have noticed, we ommitted the return type because Kotlin will automatically infer the return type to be <code>Int</code>.</p>
-<h2 id="functions-with-default-values">Functions with default values</h2>
-<p>Another awesome part of Kotlin is that it gives you the ability to give default values to your parameters. Let us take a real example. Say you are developing an app with two types of users, when user provides name, he/she is a regular user, but if not, they are anonymous.</p>
-<pre><code> fun greetUser(name:String = &quot;Anonymous user&quot;,userId:Int = 0)
-    {
-        println(&quot;Welcome $name. Your user id is $userId&quot;)
-    }
+var aDouble = 1.2345
 
-</code></pre>
+var aShort = 12
 
-<p>The function can be called in the following ways.</p>
-<pre><code> greetUser() // prints Welcome Anonymous user. Your userid is 0
-    greetUser(&quot;Ngenge Senior&quot;)// Prints , Welcome Ngenge Senior. Your user id is 0
-    greetUser(name=&quot;Romeo&quot;, userId=3) //Works as expected
-    greetUser(userId=2,name=&quot;Julliet&quot;)
+var aByte = 13
+
+var aChar:Char = 'A'
+
+var aString:String = &quot;Kotlin rocks!&quot;
+
+
 </code></pre>
                 
                   
@@ -412,7 +389,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../basics/" title="Kotlin Basics" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href=".." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -421,11 +398,25 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Kotlin Basics
+                Home
               </span>
             </div>
           </a>
         
+        
+          <a href="../functions/" title="Functions" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Functions
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
         
       </nav>
     </div>
