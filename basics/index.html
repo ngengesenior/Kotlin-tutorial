@@ -226,9 +226,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#data-types" title="Data types" class="md-nav__link">
-    Data types
+  <a href="#type-system" title="Type System" class="md-nav__link">
+    Type System
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#type-conversion" title="Type Conversion" class="md-nav__link">
+    Type Conversion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#break" title="Break" class="md-nav__link">
+    Break
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" title="Example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -290,9 +317,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#data-types" title="Data types" class="md-nav__link">
-    Data types
+  <a href="#type-system" title="Type System" class="md-nav__link">
+    Type System
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#type-conversion" title="Type Conversion" class="md-nav__link">
+    Type Conversion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#break" title="Break" class="md-nav__link">
+    Break
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" title="Example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -336,7 +390,7 @@ var age = 20
 
 </code></pre>
 
-<h2 id="data-types">Data types</h2>
+<h2 id="type-system">Type System</h2>
 <p>If you are from a Java background, you understand that Java has the notion of primitive types like <code>int,boolean,float,long,double</code> etc and typen wrapper classes such as <code>Integer,Boolean,Float,Long,Double</code> respectively. Primitive types cannot be assigned <code>null</code>.</p>
 <p>In Kotlin, the story changes; as everything is an object. </p>
 <p>The various data types in Kotlin include numbers, characters,strings,collections etc.
@@ -349,9 +403,15 @@ The number types are as follows</p>
 <li>Short: 16 bytes long</li>
 <li>Byte: 8 bytes long</li>
 </ul>
-<p>There is also 
-- Char
-- String</p>
+<p>There is also </p>
+<ul>
+<li>
+<p>Char</p>
+</li>
+<li>
+<p>String</p>
+</li>
+</ul>
 <p>and Collections</p>
 <p>Code snippet of the various mentioned types above can be seen here</p>
 <pre><code class="kotlin">
@@ -370,6 +430,42 @@ var aByte = 13
 var aChar:Char = 'A'
 
 var aString:String = &quot;Kotlin rocks!&quot;
+
+
+</code></pre>
+
+<h2 id="type-conversion">Type Conversion</h2>
+<p>In Kotlin, converting from type <code>A</code> to type <code>B</code> requires invoking <code>a.toB</code>;</p>
+<pre><code>//Conversion between types
+val a = 12  //Int
+val b = 1.23f //Float
+
+val c = a.toFloat()  //Convert from Int to Float
+
+val d = b.toDouble()  //Convert b to Double
+</code></pre>
+
+<h2 id="break">Break</h2>
+<p>Let us get a break and do some little practical work</p>
+<h3 id="example">Example</h3>
+<p>The diameter of certain circular Github sticker is 10mm. Write a program that prints the circumference and the area of the sticker im mm and mm^2</p>
+<pre><code class="kotlin">    /**
+ * Created by ngenge on 11/23/18.
+ */
+
+
+fun main(args: Array&lt;String&gt;) {
+    val pi = Math.PI //The PI constant from java.lang package
+    val diameter = 10
+    val radius = diameter/2
+
+    val circumference = diameter * radius
+
+    val area = radius.times(radius) * pi
+
+    println(&quot;The circumference is $circumference&quot;)
+    println(&quot;The area is $area&quot;)
+}
 
 
 </code></pre>
